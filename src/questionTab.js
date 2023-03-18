@@ -37,7 +37,7 @@ export default function Maintab(props){
                     <div className="navbar-text">Star Wars Quiz Saga</div>
                 </div>
                 <div className="navbar-right">
-                    <button onClick={() => {props.setTimer(0);console.log(props.timer)}} className="play-intro">
+                    <button onClick={() => {props.setTimer(0)}} className="play-intro">
                         <img className="play-button-img" src={play}></img>
                         Play Intro</button>
                 </div>
@@ -55,8 +55,6 @@ export default function Maintab(props){
                     <button className="changeQuestion" onClick={() => {setNumber(handleNumberUp(number))}}>&gt;</button>
         </div>
             </div>
-         <button className="11" onClick={() => {console.log(txt.map(item => item.userSelect))}}>DENEME</button>
-
         </div>
     )
 }
