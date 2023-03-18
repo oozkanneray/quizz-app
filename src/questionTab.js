@@ -4,11 +4,13 @@ import Buttons from "./buttons"
 import vader from "./assets/dw.png"
 import play from "./assets/play.png"
 import Question from "./question"
+import userEvent from "@testing-library/user-event"
 
 export default function Maintab(props){
 
     const [txt,setTxt] = useState(data)
     const [number,setNumber] = useState(1)
+    const [answerBtn,setAnswerBtn] = useState(true)
     
 
     const handleNumberUp = (x) => {
@@ -26,6 +28,11 @@ export default function Maintab(props){
         } else{
             return x - 1
         }
+    }
+
+    const checkUserAnswer = () => {
+        let userAnswer = txt.map(item => item.userSelect);
+        return userAnswer.some(element => element == "")
     }
 
 
@@ -52,9 +59,20 @@ export default function Maintab(props){
                 <div className="control">
                     <button className="changeQuestion"  onClick={() => {setNumber(handleNumberDown(number))}}>&lt;</button>
                     <div className="questionId">{number}</div>
-                    <button className="changeQuestion" onClick={() => {setNumber(handleNumberUp(number))}}>&gt;</button>
-        </div>
+                    <button className="changeQuestion" onClick={() => {setNumber(handleNumberUp(number)); checkUserAnswer()}}>&gt;</button>
+                </div>
+                <div className="seeResult-container">
+                <button
+                className="seeResults"
+                onClick={() => {
+                    checkUserAnswer() ? alert("There are questions you didn't mark.") : alert("sonuç ekranı")
+                }}
+
+            >See Results</button>
+                </div>
             </div>
+
         </div>
+
     )
 }
