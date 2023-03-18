@@ -1,4 +1,4 @@
-import swLogo from "./swLogo.png";
+import swLogo from "./assets/swLogo.png";
 
 export default function Intro() {
   return (

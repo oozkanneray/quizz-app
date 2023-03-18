@@ -1,12 +1,15 @@
 import { useState } from "react"
 import data from "./data"
 import Buttons from "./buttons"
-import vader from "./dw.png"
+import vader from "./assets/dw.png"
+import play from "./assets/play.png"
+import Question from "./question"
 
-export default function Maintab(){
+export default function Maintab(props){
 
-    const [txt,setTxt] = useState(data())
+    const [txt,setTxt] = useState(data)
     const [number,setNumber] = useState(1)
+    
 
     const handleNumberUp = (x) => {
 
@@ -15,8 +18,6 @@ export default function Maintab(){
         } else{
             return x + 1
         }
-     
-        
     }
 
     const handleNumberDown = (x) => {
@@ -27,30 +28,35 @@ export default function Maintab(){
         }
     }
 
+
     return(
         <div className="question-tab">
             <div className="navbar">
-                <img className="dw" src={vader}></img>
-                <div className="navbar-text">
-                    Star Wars Quiz Saga
+                <div className="navbar-left">
+                    <img className="dw" src={vader}></img>
+                    <div className="navbar-text">Star Wars Quiz Saga</div>
+                </div>
+                <div className="navbar-right">
+                    <button onClick={() => {props.setTimer(0);console.log(props.timer)}} className="play-intro">
+                        <img className="play-button-img" src={play}></img>
+                        Play Intro</button>
                 </div>
             </div>
             <div className="question-container">
-                <div className="question">
-                    <div className="question-text">
-                        <div>{txt.map(item=> item.id === number && item.question)}</div>
-                        <div className="underline"></div>
-                    </div>
-                    <div className="btn-container">
-                        {txt.map(item => item.id == number && item.answers.map(btn => <Buttons btn={btn}/>))}
-                    </div>
-                </div>
+
+
+                {txt.map(item => number == item.id && <Question key={item.id} number={number} item={item}/>)}
+
+
+                
                 <div className="control">
                     <button className="changeQuestion"  onClick={() => {setNumber(handleNumberDown(number))}}>&lt;</button>
                     <div className="questionId">{number}</div>
                     <button className="changeQuestion" onClick={() => {setNumber(handleNumberUp(number))}}>&gt;</button>
-                </div>
+        </div>
             </div>
+         <button className="11" onClick={() => {console.log(txt.map(item => item.userSelect))}}>DENEME</button>
+
         </div>
     )
 }

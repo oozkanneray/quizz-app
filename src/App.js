@@ -4,19 +4,19 @@ import Maintab from "./questionTab";
 
 function App() {
 
-const [timer,setTimer] = useState(10)
+const [timer,setTimer] = useState(30)
 
 
 useEffect(()=>{
     let timeout = setTimeout(() => setTimer(timer+1), 1000);
-    if(timer > 5) {clearTimeout(timeout)}
+    if(timer > 26) {clearTimeout(timeout)}
 
 },[timer])
 
-  if(timer < 5){
+  if(timer < 26){
     return <Intro/>
   } else {
-    return <Maintab/>
+    return <Maintab timer={timer} setTimer={setTimer}/>
   }
 }
 
