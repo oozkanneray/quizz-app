@@ -222,6 +222,7 @@ body,html {
   height: 100px;
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 }
 
 .navbar-text {
@@ -233,6 +234,11 @@ body,html {
   width: fit-content;
 }
 
+.navbar-left{
+  display: flex;
+  flex-direction: row;
+}
+
 .dw{
   position: relative;
   width: 70px;
@@ -240,4 +246,26 @@ body,html {
   left: 13%;
   top: 12%;
   margin: 0px;
+}
+
+.play-intro{
+  background-color: transparent;
+  border: none;
+  font-size:40px;
+  position: relative;
+  top: 20%;
+  background-color: #1F252C;
+  color: white;
+  width: 260px;
+  height: 60px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.play-button-img{
+    width: 35px;
+    margin: 5px;
+    position: relative;
+    top: 12%;
+    right: 2%;
 }
