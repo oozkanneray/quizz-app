@@ -11,6 +11,7 @@ export default function Maintab(props) {
   const [char,setChar] = useState(chars)
   const [number, setNumber] = useState(1);
   const [tab, setTab] = useState(0);
+  const [charNumber,setCharNumber] = useState(1)
 
   const handleNumberUp = (x) => {
     if (x >= txt.length) {
@@ -28,8 +29,8 @@ export default function Maintab(props) {
     }
   };
 
-  const resetGame = () => {
-      txt.map(item => item.userSelect == "");
+  const seeResult = () => {
+      setCharNumber(5)
       setTab(1)
   }
 
@@ -51,7 +52,7 @@ export default function Maintab(props) {
           )}
 
           <div className="control">
-            <button
+            <button   
               className="changeQuestion"
               onClick={() => {
                 setNumber(handleNumberDown(number));
@@ -76,7 +77,7 @@ export default function Maintab(props) {
               onClick={() => {
                 checkUserAnswer()
                   ? alert("There are questions you didn't mark.")
-                  : setTab(1);
+                  : seeResult();
               }}
             >
               See Results
@@ -90,9 +91,8 @@ export default function Maintab(props) {
       <div className="result-tab">
         <Navbar setTimer={props.setTimer} />
             <div className="result">
-              {char.map(item => item.id == 10 &&
+              {char.map(item => item.id == charNumber &&
               <Character txt={txt} setNumber={setNumber} tab={tab} key={item.id} setTab={setTab} item={item} />
-                
                 )}
             </div>
            
