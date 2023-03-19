@@ -3,13 +3,15 @@ import data from "./data";
 import vader from "./assets/dw.png";
 import play from "./assets/play.png";
 import Question from "./question";
-import Anakin from "./assets/ResultTab/anakin";
+import Character from "./CharCard";
+import chars from "./Chardata";
 
 
 export default function Maintab(props) {
   const [txt, setTxt] = useState(data);
+  const [char,setChar] = useState(chars)
   const [number, setNumber] = useState(1);
-  const [tab, setTab] = useState(0);
+  const [tab, setTab] = useState(1);
 
   const handleNumberUp = (x) => {
     if (x >= txt.length) {
@@ -124,7 +126,12 @@ export default function Maintab(props) {
           </div>
         </div>
 
-            <Anakin tab={tab} setTab={setTab} />
+            <div className="result">
+              {char.map(item => 
+              <Character tab={tab} key={item.id} setTab={setTab} item={item} />
+                
+                )}
+            </div>
            
       </div>
     );
