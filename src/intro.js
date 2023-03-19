@@ -8,7 +8,7 @@ export default function Intro() {
         <div>far away.... </div>
       </div>
       <div className="img-container">
-        <img className="swLogo" src={swLogo}></img>
+        <img className="swLogo" alt="star wars logo" src={swLogo}></img>
       </div>
       <div className="question-content">
         <div className="container">

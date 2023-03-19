@@ -7,6 +7,7 @@ function App() {
 const [timer,setTimer] = useState(30)
 
 
+
 useEffect(()=>{
     let timeout = setTimeout(() => setTimer(timer+1), 1000);
     if(timer > 26) {clearTimeout(timeout)}
