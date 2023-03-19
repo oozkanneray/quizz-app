@@ -110,7 +110,7 @@ body,html {
   }
 }
 
-.question-tab {
+.question-tab,.result-tab{
   position: relative;
   width: 100%;
   height: 100vh;
@@ -125,7 +125,7 @@ body,html {
   width: 50%;
   height: auto;
   left: 25%;
-  top: 13%;
+  top: 10%;
   background-color: rgb(233, 248, 249);
   border-radius: 50px;
   padding-bottom: 20px;
@@ -166,7 +166,7 @@ body,html {
 }
 
 .btn:hover{
-  border: 2px solid #537fe7;
+  border: 2px solid #2ad408;
   box-shadow: 1px 1px 5px rgb(189, 189, 189);
 }
 
@@ -175,7 +175,7 @@ body,html {
   top: 5px;
   display:block;
   content: '';
-  border-bottom: solid 6px #3C84AB;
+  border-bottom: solid 6px #2ad408;
   transform: scaleX(0);  
   transition: transform 250ms ease-in-out;
 }
