@@ -11,7 +11,7 @@ export default function Maintab(props) {
   const [txt, setTxt] = useState(data);
   const [char,setChar] = useState(chars)
   const [number, setNumber] = useState(1);
-  const [tab, setTab] = useState(1);
+  const [tab, setTab] = useState(0);
 
   const handleNumberUp = (x) => {
     if (x >= txt.length) {
@@ -127,7 +127,7 @@ export default function Maintab(props) {
         </div>
 
             <div className="result">
-              {char.map(item => 
+              {char.map(item => item.id == 1 &&
               <Character tab={tab} key={item.id} setTab={setTab} item={item} />
                 
                 )}
