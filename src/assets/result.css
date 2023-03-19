@@ -1,22 +1,27 @@
-.result-container {
-    position: relative;
-    width: 500px;
-    height: auto;
-    background-color: white;
-    left: 36%;
-    top: 10%;
-    border-radius:20px;
+.result {
     display: flex;
-    flex-direction:column ;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    margin-top:4% ;
 }
 
 
 .result-img {
     width: 200px;
-    height: 200px;
     object-fit: cover;
     border-radius:100%
+}
+
+.result-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    max-width: 500px;
+    width: auto;
+    border-radius: 40px;
 }
 
 .result-title {
