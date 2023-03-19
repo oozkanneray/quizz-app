@@ -127,7 +127,7 @@ export default function Maintab(props) {
         </div>
 
             <div className="result">
-              {char.map(item => 
+              {char.map(item => item.id == 10 &&
               <Character tab={tab} key={item.id} setTab={setTab} item={item} />
                 
                 )}
