@@ -1,17 +1,16 @@
 import { useState } from "react";
 import data from "./data";
-import vader from "./assets/dw.png";
-import play from "./assets/play.png";
 import Question from "./question";
 import Character from "./CharCard";
 import chars from "./Chardata";
+import Navbar from "./navbar";
 
 
 export default function Maintab(props) {
   const [txt, setTxt] = useState(data);
   const [char,setChar] = useState(chars)
   const [number, setNumber] = useState(1);
-  const [tab, setTab] = useState(1);
+  const [tab, setTab] = useState(0);
 
   const handleNumberUp = (x) => {
     if (x >= txt.length) {
@@ -29,6 +28,11 @@ export default function Maintab(props) {
     }
   };
 
+  const resetGame = () => {
+      txt.map(item => item.userSelect == "");
+      setTab(1)
+  }
+
   const checkUserAnswer = () => {
     let userAnswer = txt.map((item) => item.userSelect);
     return userAnswer.some((element) => element === "");
@@ -37,27 +41,7 @@ export default function Maintab(props) {
   if (tab === 0) {
     return (
       <div className="question-tab">
-        <div className="navbar">
-          <div className="navbar-left">
-            <img className="dw" alt="vader helmeth" src={vader}></img>
-            <div className="navbar-text">Star Wars Quiz Saga</div>
-          </div>
-          <div className="navbar-right">
-            <button
-              onClick={() => {
-                props.setTimer(0);
-              }}
-              className="play-intro"
-            >
-              <img
-                className="play-button-img"
-                alt="play button "
-                src={play}
-              ></img>
-              Play Intro
-            </button>
-          </div>
-        </div>
+        <Navbar setTimer={props.setTimer} />
         <div className="question-container">
           {txt.map(
             (item) =>
@@ -104,31 +88,10 @@ export default function Maintab(props) {
   } else {
     return (
       <div className="result-tab">
-        <div className="navbar">
-          <div className="navbar-left">
-            <img className="dw" alt="vader helmeth" src={vader}></img>
-            <div className="navbar-text">Star Wars Quiz Saga</div>
-          </div>
-          <div className="navbar-right">
-            <button
-              onClick={() => {
-                props.setTimer(0);
-              }}
-              className="play-intro"
-            >
-              <img
-                className="play-button-img"
-                alt="play button "
-                src={play}
-              ></img>
-              Play Intro
-            </button>
-          </div>
-        </div>
-
+        <Navbar setTimer={props.setTimer} />
             <div className="result">
               {char.map(item => item.id == 10 &&
-              <Character tab={tab} key={item.id} setTab={setTab} item={item} />
+              <Character txt={txt} setNumber={setNumber} tab={tab} key={item.id} setTab={setTab} item={item} />
                 
                 )}
             </div>

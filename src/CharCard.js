@@ -1,7 +1,14 @@
 import "./assets/result.css"
 
 function Character(props) {
-    return ( 
+    const resetGame = () => {
+        props.txt.map(item => item.userSelect = "")
+        props.setTab(0)
+        props.setNumber(1)
+        
+    }
+    return (
+ 
         <div className="result-container">
             <div className="result-title">You're {props.item.name}</div>
             <img className="result-img" src={props.item.src}></img>
@@ -9,8 +16,7 @@ function Character(props) {
             <button
             className="result-btn"
             onClick={()=>{
-                props.setTab(0)
-                window.location.reload(true);
+                resetGame()
             }}
             >
                 Restart Quiz
