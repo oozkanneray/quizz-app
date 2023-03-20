@@ -223,6 +223,11 @@ html,#root{
   margin-left: 7px;
   margin-right: 7px;
   color: #3c84ab;
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+}
+.changeQuestion:hover{
+  color: #000000;
 }
 
 .navbar {
