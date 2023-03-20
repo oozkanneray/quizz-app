@@ -12,7 +12,7 @@ export default function Question(props) {
         <div className="underline"></div>
       </div>
       <div className="btn-container">
-        {props.item.answers.map(btn => <Buttons item={props.item} active={active} setActive={setActive} btn={btn.answer}/>)}
+        {props.item.answers.map(btn => <Buttons number={props.number} setNumber={props.setNumber} item={props.item} active={active} setActive={setActive} btn={btn.answer}/>)}
       </div>
     </div>
   );

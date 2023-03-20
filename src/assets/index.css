@@ -2,11 +2,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
 
 body,
-html {
+html,#root{
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  height: 100%;
+  height: 100vh;
   user-select: none;
   font-family: "Nunito", sans-serif;
 }
@@ -195,9 +195,18 @@ html {
 
 .control {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
+}
+
+.btn-holder{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .questionId {
@@ -272,11 +281,10 @@ html {
 .seeResults {
   position: relative;
   display: flex;
-  left: 39%;
   top: 20%;
-  width: 220px;
+  width: auto;
   height: 60px;
-  font-size: 30px;
+  font-size: 32px;
   cursor: pointer;
   border: 2px solid #537fe78a;
   background-color: #1f252c;
@@ -294,11 +302,20 @@ html {
   position: relative;
   top:2%;
   left: 90%;
-  font-size: 52px;
+  font-size: 30px;
   background-color: transparent;
   border: none;
   color: white;
-  font-weight: bold;
+  font-weight: thin;
   width: 60px;
   z-index: 100;
+  transition: 0.1s ease-in-out;
+  cursor: pointer;
+  border-radius:50px
+}
+
+.close-intro:hover{
+  background-color: white;
+  color: black;
+
 }

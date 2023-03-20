@@ -32,7 +32,9 @@
 
 .result-text{
     margin: 40px;
-    user-select:all
+    user-select:all;
+    font-size:22px;
+    text-align:center
 }
 
 .result-btn{

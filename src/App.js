@@ -4,7 +4,7 @@ import Maintab from "./questionTab";
 
 function App() {
 
-const [timer,setTimer] = useState(0)
+const [timer,setTimer] = useState(30)
 
 
 

@@ -5,6 +5,7 @@ export default function Buttons(props){
         onClick={()=>{
             props.item.userSelect = props.btn;
             props.setActive(props.btn)
+            if(props.number < 6) props.setNumber(props.number + 1)
         }} 
         className="btn">{props.btn}</button>
     )
