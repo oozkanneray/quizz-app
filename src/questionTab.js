@@ -2,7 +2,7 @@ import { useState } from "react";
 import data from "./data";
 import Question from "./question";
 import Character from "./CharCard";
-import chars from "./Chardata";
+import chars from "./Chardata"; 
 import Navbar from "./navbar";
 
 
@@ -30,7 +30,7 @@ export default function Maintab(props) {
   };
 
   const seeResult = () => {
-      setCharNumber(5)
+      setCharNumber(Math.floor(Math.random() * 10))
       setTab(1)
   }
 
